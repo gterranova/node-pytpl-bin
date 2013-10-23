@@ -1,0 +1,50 @@
+{
+  "name": "node-pytpl-bin",
+  "version": "0.1.0",
+  "description": "PyTpl wrapper",
+  "keywords": [
+    "python"
+  ],
+  "homepage": "https://github.com/gterranova/node-pytpl-bin",
+  "bugs": {
+    "url": "https://github.com/gterranova/node-pytpl-bin/issues"
+  },
+  "author": {
+    "name": "Gianpaolo Terranova",
+    "email": "gianpaoloterranova@gmail.com",
+    "url": "http://www.terranovanet.it"
+  },
+  "maintainers": [
+    {
+      "name": "Gianpaolo Terranova"
+    }
+  ],
+  "main": "lib/pytpl",
+  "bin": {
+    "pytpl": "bin/pytpl.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gterranova/node-pytpl-bin.git"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "licenses": [
+    {
+      "type": "BSD"
+    }
+  ],
+  "dependencies": {
+    "request": "~2.26.0"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "vendor"
+  ],
+  "readme": "# node-pytpl-bin \r\n\r\n[pytpl](http://pytpl.sourceforge.net) 0.1.0 Node.js wrapper that makes pytpl template engine seamlessly available as a local dependency.\r\n\r\n> pytpl is python template engine.\r\n\r\n## Install\r\n\r\nInstall with [npm](https://npmjs.org/package/pytpl-bin): `npm install --save pytpl-bin`\r\n\r\n\r\n## Example usage\r\n\r\n```js\r\nvar execFile = require('child_process').execFile;\r\nvar pytplPath = require('pytpl-bin').path;\r\n\r\nexecFile(pytplPath, ['-v'], function(err, stdout, stderr) {\r\n    console.log('pytpl running');\r\n});\r\n```\r\n\r\nCan also be run directly from `./node_modules/.bin/pytpl`.\r\n\r\n\r\n## License\r\n\r\nEverything licensed under the [BSD license](http://opensource.org/licenses/bsd-license.php)  and copyright Gianpaolo Terranova.\r\n",
+  "readmeFilename": "readme.md",
+  "_id": "pytpl-bin@0.1.0",
+  "_from": "pytpl-bin@~0.1.0"
+}
