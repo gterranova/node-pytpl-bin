@@ -37,13 +37,19 @@ def SimpleExec(v, env):
     except NameError:
         g = GLOBALS.copy()
         g['__builtins__'] = "HIDDEN"
-        msg = "\n"+"*"*40+"\nUnable to exec: %r, globals %r\n" % (v, g)+"*"*40+"\n"
+        msg = "\n"+"*"*40+"\nUnable to exec: %s, globals %r\n" % (v, g)+"*"*40+"\n"
         print msg
         raise
     except TypeError:
         g = GLOBALS.copy()
         g['__builtins__'] = "HIDDEN"
-        msg = "\n"+"*"*40+"\nUnable to exec: %r, globals %r\n" % (v, g)+"*"*40+"\n"
+        msg = "\n"+"*"*40+"\nUnable to exec: %s, globals %r\n" % (v, g)+"*"*40+"\n"
+        sys.stderr.write( msg)
+        raise
+    except:
+        g = GLOBALS.copy()
+        g['__builtins__'] = "HIDDEN"
+        msg = "\n"+"*"*40+"\nUnable to exec: %s, globals %r\n" % (v, g)+"*"*40+"\n"
         sys.stderr.write( msg)
         raise
 
