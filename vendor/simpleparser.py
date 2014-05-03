@@ -134,7 +134,10 @@ class Parser(object):
                 return Block(BlockTypes.DEFAULT, 'raw', args=[s.encode('utf-8').decode('string_escape')], can_eval=False)
             can_eval = s[1:].startswith("#@import") or s[1:].startswith("#@export") or s[1:].startswith("#!")
             return Block(BlockTypes.DEFAULT, 'raw', args=[s[1:-1].encode('utf-8').decode('string_escape')], can_eval=can_eval)
-        
+
+        if len(s) > 3 and s[0] == '#' and s[1] in QUOTES and s[1] == s[-1]:
+            return Block(BlockTypes.DEFAULT, 'raw', args=[s[2:-1].encode('utf-8').decode('string_escape')], can_eval=False)
+
         entry_type = BlockTypes.get(s)
 
         if len(s) > 2 and (s[2:10] == "EDITABLE" or s[2:5] == "END"):
